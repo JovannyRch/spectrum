@@ -58,7 +58,7 @@ button { font: inherit; }
 .site-header.scrolled::before,
 .page-films .site-header::before { opacity: 0; }
 
-.brand { grid-column: 2; width: clamp(175px, 18vw, 275px); }
+.brand { grid-column: 2; width: clamp(210px, 20vw, 320px); }
 .brand img { width: 100%; height: auto; }
 
 .site-header > nav {
@@ -72,11 +72,11 @@ button { font: inherit; }
   grid-row: 1;
   display: flex;
   align-items: center;
-  gap: clamp(14px, 1.5vw, 30px);
+  gap: clamp(12px, 1.1vw, 22px);
   margin: 0;
   padding: 0;
   list-style: none;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 700;
   letter-spacing: .09em;
   text-transform: uppercase;
@@ -95,6 +95,20 @@ button { font: inherit; }
 }
 .nav-list a:hover::after,
 .nav-list a[aria-current="page"]::after { right: 0; }
+
+.demo-reel {
+  grid-column: 3;
+  grid-row: 1;
+  justify-self: end;
+  color: #ffed00;
+  font-size: clamp(22px, 1.8vw, 30px);
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: opacity .2s ease;
+}
+.demo-reel:hover { opacity: .72; }
 
 .menu-toggle {
   display: none;
@@ -239,7 +253,7 @@ button { font: inherit; }
 
 .about {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
   min-height: 760px;
   background: #0a0a0a;
 }
@@ -249,23 +263,23 @@ button { font: inherit; }
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: clamp(55px, 8vw, 135px);
+  padding: clamp(50px, 6vw, 100px);
 }
 .section-label {
   margin: 0 0 35px;
-  font-size: clamp(34px, 4vw, 64px);
+  font-size: clamp(42px, 4.5vw, 72px);
   line-height: 1;
   letter-spacing: -.035em;
 }
 .about-copy p {
   margin: 0 0 1.35em;
   color: #d5d5d5;
-  font-size: clamp(14px, 1.05vw, 17px);
-  line-height: 1.75;
+  font-size: clamp(18px, 1.2vw, 21px);
+  line-height: 1.65;
 }
 .about-copy h3 {
   margin: 26px 0 12px;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: .16em;
 }
 
@@ -395,7 +409,8 @@ button { font: inherit; }
 
 @media (max-width: 1180px) {
   .site-header { grid-template-columns: 50px 1fr 50px; }
-  .brand { width: 205px; }
+  .brand { width: 230px; }
+  .demo-reel { font-size: 18px; }
   .menu-toggle { display: block; }
   .site-header > nav { position: static; }
   .nav-list {
@@ -422,7 +437,8 @@ button { font: inherit; }
 
 @media (max-width: 760px) {
   :root { --header-height: 72px; }
-  .brand { width: 175px; }
+  .brand { width: 195px; }
+  .demo-reel { font-size: 12px; letter-spacing: 0; }
   .hero { min-height: 560px; }
   .hero-slide::after { background: linear-gradient(to top, rgba(0,0,0,.78), transparent 70%); }
   .hero-copy { left: 25px; right: 25px; bottom: 95px; }
@@ -430,7 +446,7 @@ button { font: inherit; }
   .carousel-control { display: none; }
   .scroll-cue { display: none; }
   .about { grid-template-columns: 1fr; }
-  .about-photo { min-height: 70vh; }
+  .about-photo { min-height: min(480px, 60vh); }
   .about-copy { padding: 60px 28px 72px; }
   .contact { grid-template-columns: 1fr; gap: 50px; padding: 75px 28px; }
   .site-footer { flex-direction: column; }
@@ -438,6 +454,11 @@ button { font: inherit; }
   .film-grid { grid-template-columns: 1fr; }
   .film-card { min-height: 145vw; }
   .film-summary { transform: translateY(calc(100% - 100px)); }
+}
+
+@media (max-width: 360px) {
+  .brand { width: 165px; }
+  .demo-reel { font-size: 10px; }
 }
 
 @media (hover: none) {
