@@ -76,7 +76,7 @@ button { font: inherit; }
   margin: 0;
   padding: 0;
   list-style: none;
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 700;
   letter-spacing: .09em;
   text-transform: uppercase;
@@ -254,7 +254,7 @@ button { font: inherit; }
 
 .about {
   display: grid;
-  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
   min-height: 760px;
   background: #0a0a0a;
 }
@@ -275,12 +275,12 @@ button { font: inherit; }
 .about-copy p {
   margin: 0 0 1.35em;
   color: #d5d5d5;
-  font-size: clamp(18px, 1.2vw, 21px);
-  line-height: 1.65;
+  font-size: clamp(22px, 1.7vw, 28px);
+  line-height: 1.55;
 }
 .about-copy h3 {
   margin: 26px 0 12px;
-  font-size: 15px;
+  font-size: 18px;
   letter-spacing: .16em;
 }
 
@@ -422,10 +422,10 @@ button { font: inherit; }
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 27px;
+    gap: 32px;
     padding: 100px 25px 40px;
     background: rgba(0,0,0,.97);
-    font-size: 24px;
+    font-size: clamp(30px, 2.4vw, 38px);
     opacity: 0;
     visibility: hidden;
     transition: opacity .3s ease, visibility .3s ease;
@@ -440,6 +440,7 @@ button { font: inherit; }
   :root { --header-height: 72px; }
   .brand { width: 175px; }
   .demo-reel { margin-right: 0; font-size: 15px; letter-spacing: 0; }
+  .nav-list { font-size: 28px; }
   .hero { min-height: 560px; }
   .hero-slide::after { background: linear-gradient(to top, rgba(0,0,0,.78), transparent 70%); }
   .hero-copy { left: 25px; right: 25px; bottom: 95px; }
