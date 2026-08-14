@@ -62,13 +62,15 @@
     if (!trigger || !modal || !frame) return;
     event.preventDefault();
     const vimeoId = trigger.dataset.vimeo;
+    const vimeoHash = trigger.dataset.vimeoHash;
     const youtubeId = trigger.dataset.youtube;
     if (vimeoId && !/^\d+$/.test(vimeoId)) return;
+    if (vimeoHash && !/^[\da-f]+$/i.test(vimeoHash)) return;
     if (youtubeId && !/^[\w-]{11}$/.test(youtubeId)) return;
     if (!vimeoId && !youtubeId) return;
     const iframe = document.createElement('iframe');
     iframe.src = vimeoId
-      ? `https://player.vimeo.com/video/${vimeoId}?app_id=122963&autoplay=1&title=0&byline=0&portrait=0`
+      ? `https://player.vimeo.com/video/${vimeoId}?${vimeoHash ? `h=${vimeoHash}&` : ''}app_id=122963&autoplay=1&title=0&byline=0&portrait=0`
       : `https://www.youtube-nocookie.com/embed/${youtubeId}?autoplay=1&rel=0`;
     iframe.title = trigger.dataset.title || 'Spectrum Films video';
     iframe.allow = 'autoplay; fullscreen; picture-in-picture';
