@@ -32,7 +32,7 @@ button { font: inherit; }
   z-index: 50;
   height: var(--header-height);
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  grid-template-columns: minmax(max-content, 1fr) auto minmax(max-content, 1fr);
   align-items: center;
   padding: 0 clamp(22px, 4vw, 72px);
   color: #fff;
@@ -72,11 +72,11 @@ button { font: inherit; }
   grid-row: 1;
   display: flex;
   align-items: center;
-  gap: clamp(12px, 1.1vw, 22px);
+  gap: clamp(10px, .8vw, 16px);
   margin: 0;
   padding: 0;
   list-style: none;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
   letter-spacing: .09em;
   text-transform: uppercase;
@@ -100,9 +100,10 @@ button { font: inherit; }
   grid-column: 3;
   grid-row: 1;
   justify-self: end;
+  margin-right: clamp(40px, 5vw, 80px);
   color: #ffed00;
-  font-size: clamp(22px, 1.8vw, 30px);
-  font-weight: 700;
+  font-size: clamp(28px, 2.2vw, 36px);
+  font-weight: 800;
   letter-spacing: .06em;
   text-transform: uppercase;
   white-space: nowrap;
@@ -407,10 +408,10 @@ button { font: inherit; }
 .skip-link { position: fixed; z-index: 200; left: 12px; top: -100px; padding: 10px 14px; color: #000; background: #fff; }
 .skip-link:focus { top: 12px; }
 
-@media (max-width: 1180px) {
+@media (max-width: 1500px) {
   .site-header { grid-template-columns: 50px 1fr 50px; }
   .brand { width: 230px; }
-  .demo-reel { font-size: 18px; }
+  .demo-reel { margin-right: clamp(15px, 4vw, 45px); font-size: 28px; }
   .menu-toggle { display: block; }
   .site-header > nav { position: static; }
   .nav-list {
@@ -424,7 +425,7 @@ button { font: inherit; }
     gap: 27px;
     padding: 100px 25px 40px;
     background: rgba(0,0,0,.97);
-    font-size: 20px;
+    font-size: 24px;
     opacity: 0;
     visibility: hidden;
     transition: opacity .3s ease, visibility .3s ease;
@@ -437,8 +438,8 @@ button { font: inherit; }
 
 @media (max-width: 760px) {
   :root { --header-height: 72px; }
-  .brand { width: 195px; }
-  .demo-reel { font-size: 12px; letter-spacing: 0; }
+  .brand { width: 175px; }
+  .demo-reel { margin-right: 0; font-size: 15px; letter-spacing: 0; }
   .hero { min-height: 560px; }
   .hero-slide::after { background: linear-gradient(to top, rgba(0,0,0,.78), transparent 70%); }
   .hero-copy { left: 25px; right: 25px; bottom: 95px; }
@@ -457,8 +458,8 @@ button { font: inherit; }
 }
 
 @media (max-width: 360px) {
-  .brand { width: 165px; }
-  .demo-reel { font-size: 10px; }
+  .brand { width: 145px; }
+  .demo-reel { font-size: 12px; }
 }
 
 @media (hover: none) {
