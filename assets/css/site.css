@@ -408,7 +408,7 @@ button { font: inherit; }
 .skip-link { position: fixed; z-index: 200; left: 12px; top: -100px; padding: 10px 14px; color: #000; background: #fff; }
 .skip-link:focus { top: 12px; }
 
-@media (max-width: 1500px) {
+@media (max-width: 1800px) {
   .site-header { grid-template-columns: 50px 1fr 50px; }
   .brand { width: 230px; }
   .demo-reel { margin-right: clamp(15px, 4vw, 45px); font-size: 28px; }
